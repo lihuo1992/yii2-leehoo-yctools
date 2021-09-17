@@ -1,5 +1,5 @@
 {
-    "name": "leehoo-response-log/yii2-leehoo-yctools",
+    "name": "leehootools/yii2-leehoo-yctools",
     "description": "响应日志+Debug+接口返回json+操作文件+其他常用",
     "type": "yii2-extension",
     "keywords": ["yii2","extension"],
