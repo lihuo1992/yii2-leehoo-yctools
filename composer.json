@@ -1,0 +1,21 @@
+{
+    "name": "leehoo-response-log/yii2-leehoo-yctools",
+    "description": "响应日志+Debug+接口返回json+操作文件+其他常用",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "BSD-4-Clause",
+    "authors": [
+        {
+            "name": "LeeHoo",
+            "email": "lihuo1992@qq.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "leehooyctools\\": ""
+        }
+    }
+}
