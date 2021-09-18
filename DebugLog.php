@@ -5,7 +5,6 @@ namespace leehooyctools;
 
 use Yii;
 use leehooyctools\config\GlobalParamsCode;
-
 class DebugLog
 {
 

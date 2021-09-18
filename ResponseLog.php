@@ -42,10 +42,8 @@ class ResponseLog
 
     public function __construct()
     {
-        \app\tool\DebugLog::debugLogTime();
+        DebugLog::debugLogTime();
         $this->level = RESPONSE_LOG_LEVEL_INFO;
-//                file_put_contents(ROOT_PATH.'/runtime/logs/ResponseLog.log','save:xx'."\n",FILE_APPEND);
-//        self::setLevel(RESPONSE_LOG_LEVEL_INFO);
     }
 
     static function initClass(){
@@ -263,10 +261,6 @@ class ResponseLog
         {
             $this->ver = '';
         }
-
-//        var_dump($ver);exit;
-//
-//        echo json_encode($this->ver);exit;
         $propertiesList = get_class_vars(__CLASS__);
 
         $logData = [];

@@ -7,7 +7,7 @@
 namespace leehooyctools;
 
 use leehooyctools\ResponseLog;
-use app\models\ErrorCode;
+//use app\models\ErrorCode;
 use leehooyctools\config\RedisKey;
 use leehooyctools\config\ResponseCode;
 
@@ -130,7 +130,6 @@ class JsonReturn
                         $this->cacheData = $cacheData['return'];
                         return true;
                     }
-
                 }
             }
         }
@@ -180,6 +179,7 @@ class JsonReturn
         if($returns['code']!=200){
             $word_index = ['A'=>'10','B'=>'11','C'=>'12','D'=>'13','E'=>'14','F'=>'15','G'=>'16','H'=>'17','I'=>'18','J'=>'19','K'=>'20','L'=>'21','M'=>'22','N'=>'23','O'=>'24','P'=>'25','Q'=>'26','R'=>'27','S'=>'28','T'=>'29','U'=>'30','V'=>'31','W'=>'32','X'=>'33','Y'=>'34','Z'=>'35'];
             if(!empty(Yii::$app->params['__ERR_CODE_SAVE_INFO__'])){
+                /**
                 $err_code_res = Yii::$app->params['__ERR_CODE_SAVE_INFO__'];
                 $err_line = $err_code_res['err_line'];
                 $err_code_obj = ErrorCode::findOne(['err_line'=>$err_line]);
@@ -202,6 +202,7 @@ class JsonReturn
                     $err_code_obj->save();
                 }
                 $returns['msg'].='['.$err_code.']';
+                 * **/
             }
         }
         else
@@ -249,7 +250,6 @@ class JsonReturn
         else{
             Yii::$app->response->format=Response::FORMAT_JSON;
         }
-
         return   $returns;
     }
 
@@ -323,8 +323,6 @@ class JsonReturn
                  DebugLog::saveInfo('__ERR_CODE_SAVE_INFO__',Yii::$app->params['__ERR_CODE_SAVE_INFO__']);
             }
         }
-
-
         return $this;
     }
 
