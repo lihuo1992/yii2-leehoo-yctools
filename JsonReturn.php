@@ -6,6 +6,7 @@
  */
 namespace leehooyctools;
 
+use leehooyctools\config\GlobalParamsCode;
 use leehooyctools\ResponseLog;
 //use app\models\ErrorCode;
 use leehooyctools\config\RedisKey;

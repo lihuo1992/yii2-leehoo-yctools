@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist leehoo-response-log/yii2-leehoo-yctools "*"
+php composer.phar require --prefer-dist leehootools/yii2-leehoo-yctools "*"
 ```
 
 or add
 
 ```
-"leehoo-response-log/yii2-leehoo-yctools": "*"
+"leehootools/yii2-leehoo-yctools": "*"
 ```
 
 to the require section of your `composer.json` file.
