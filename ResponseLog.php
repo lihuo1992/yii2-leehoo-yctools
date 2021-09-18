@@ -3,7 +3,9 @@
 namespace leehooyctools;
 use Yii;
 use leehooyctools\config\GlobalParamsCode;
-
+defined('RESPONSE_LOG_LEVEL_ERROR') or define('RESPONSE_LOG_LEVEL_ERROR', 'error');
+defined('RESPONSE_LOG_LEVEL_INFO') or define('RESPONSE_LOG_LEVEL_INFO', 'info');
+defined('RESPONSE_LOG_LEVEL_WARNING') or define('RESPONSE_LOG_LEVEL_WARNING', 'warning');
 class ResponseLog
 {
     public $level;        // warn info error (也考虑可以取消)
@@ -270,24 +272,9 @@ class ResponseLog
             {
                 $logData[$key] = $this->$key;
             }
-
         }
-
-//        var_dump(json_encode($logData));exit;
-//        file_put_contents(ROOT_PATH.'/runtime/logs/ResponseLog.log',json_encode($logData)."\n",FILE_APPEND);
         Yii::info(json_encode($logData),'ResponseLog');
-//        file_put_contents(ROOT_PATH.'/runtime/response.log',time()."\n",FILE_APPEND);
-
         $this->saveLock = true;
     }
-
-//    public function __destruct() {
-//
-//        if(!$this->saveLock)
-//        {
-//            $this->saveIn();
-//        }
-//    }
-
 
 }
