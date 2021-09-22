@@ -2,9 +2,10 @@
 namespace leehooyctools;
 
 
-use app\components\ResponseLog;
+use leehooyctools\ResponseLog;
 
 use Yii;
+
 
 
 class Common
