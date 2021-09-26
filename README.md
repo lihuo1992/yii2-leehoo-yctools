@@ -21,11 +21,10 @@ or add
 
 to the require section of your `composer.json` file.
 
-
-Usage
+应用
 -----
 
-- 响应日志使用ResponseLog举例:
+##### 响应日志使用ResponseLog举例:
 
 ```php
 <?= 
@@ -37,4 +36,20 @@ Usage
             'on afterAction' => function ($event) {
                 \leehooyctools\ResponseLog::getClass()->saveIn();
             }
-        ], ?>```
+        ]?> 
+```
+#####  用户授权功能
+- 首先配置Mysql用户表和Redis链接名：
+```php
+namespace leehooyctools\config;
+
+class Connection
+{
+    const USER_DB_NAME = 'db';
+    const REDIS_NAME = 'redis';
+}
+```
+- 调用函数
+```php
+\leehooyctools\user\UserAuth::createUserAuth(1111,'walPluginAdv',1670000000,'微信识别朋友圈转发，自动授权');
+```
