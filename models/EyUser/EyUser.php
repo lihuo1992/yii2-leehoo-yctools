@@ -39,7 +39,7 @@ class EyUser extends \yii\db\ActiveRecord
      */
     public static function getDb()
     {
-        return Yii::$app->get(Connection::USER_DB_NAME);
+        return Connection::UserDb();
     }
 
     /**

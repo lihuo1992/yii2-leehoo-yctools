@@ -24,10 +24,10 @@ class UserKefu extends \yii\db\ActiveRecord
     {
         return 'user_kefu';
     }
-    
+
     public static function getDb()
     {
-        return Yii::$app->get(Connection::USER_DB_NAME);
+        return Connection::UserDb();
     }
     /**
      * {@inheritdoc}

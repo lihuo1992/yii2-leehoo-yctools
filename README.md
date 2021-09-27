@@ -45,11 +45,23 @@ namespace leehooyctools\config;
 
 class Connection
 {
-    const USER_DB_NAME = 'db';
-    const REDIS_NAME = 'redis';
+       //配置用户Mysql表连接
+    const USER_DB_CONNENCT = [
+        'dsn' => 'mysql:host=127.0.0.1:9963;dbname=webapp',
+        'username' => 'root',
+        'password' => '',
+        'charset' => 'utf8mb4'
+    ];
+    
+    //配置用户Redis连接
+    const USER_REDIS_CONNENCT = [
+        'hostname'=>'127.0.0.1',
+        'port'=>6379,
+        'database'=>0
+    ];
 }
 ```
 - 调用函数
 ```php
-\leehooyctools\user\UserAuth::createUserAuth(1111,'walPluginAdv',1670000000,'微信识别朋友圈转发，自动授权');
+\leehooyctools\user\UserAuth::createUserAuthByOpenid('o-QfV6Byn1KWCsxA-q0uXqN6VSKs','walPluginAdv',1670000000,'微信识别朋友圈转发，自动授权');
 ```
