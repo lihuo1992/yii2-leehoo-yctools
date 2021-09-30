@@ -68,7 +68,8 @@ class UserAuth
 
             }
         }
-        $statusReturn->data=$userAuthIndex;
+        $statusReturn->data['res']=$userAuthIndex->toArray();
+        $statusReturn->data['__Debug']=DebugLog::getAllLogs();
         return $statusReturn->output();
     }
 
@@ -201,10 +202,10 @@ class UserAuth
             $redisJson['kefuInfo']=$kefuInfo;
             $redisJson['authRouteRes'] = $authRouteRes;
             $redisJson['authCodeRes'] = $authCodeRes;
-            DebugLog::saveInfo('redisInUVT',$redisJson);
             $redis = Connection::UserRedis();
             $redis->select(1);
             $redis->setex('UVT:'.$username,$expireTime,json_encode($redisJson));
+            DebugLog::saveInfo('redisInUVT',['UVT:'.$username,$redisJson]);
 
         }
     }
